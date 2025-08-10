@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #e3f2fd 0%, #ede7f6 60%, #fce4ec 100%);
+}
+
+.max-content-width {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.header {
+    background: linear-gradient(90deg, #bbdefb 0%, #d1c4e9 80%, #f8bbd0 100%);
+    border-bottom-right-radius: 2em;
+    border-bottom-left-radius: 2em;
+}
+
+.header-content {
+    padding: 3.5em 1em;
+}
+
+.header-content h1 {
+    font-size: 2rem;
+    color: #6a1b9a;
+    text-shadow: 0 2px 8px rgba(156, 39, 176, 0.10);
+}
+
+.main {
+    margin-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: #247a4b; */
+    justify-content: space-evenly;
+    gap: 16px;
+}
+
+.portfolio-item {
+    display: flex;
+    gap: 36px;
+    width: 40%;
+    height: 200px;
+    background: linear-gradient(135deg, #ede7f6 0%, #bbdefb 60%, #fce4ec 100%);
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(156, 39, 176, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.portfolio-item:hover {
+    cursor: pointer;
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(156, 39, 176, 0.14);;
+}
+
+.title-portfolio {
+    padding: 1em .25em;
+    font-size: 1rem;
+    color: #1976d2;
+}
+
+.description-portfolio {
+    display: none;
+}
+
+.description-portfolio-item {
+    padding: .5em 0;
+}
+.description-portfolio-item ul {
+    padding: .5em 1em;
+}
+
+/* Modal CSS */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background: #fff;
+    margin: auto;
+    padding: 2em;
+    border-radius: 16px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 8px 32px rgba(156, 39, 176, 0.18);
+    position: relative;
+    animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.95);}
+    to { opacity: 1; transform: scale(1);}
+}
+
+.modal-close {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+    font-size: 2em;
+    color: #6a1b9a;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #d32f2f;
+}
